@@ -16,6 +16,8 @@ featured_image: /assets/ai-drawing-studio-hero.jpg
 
 Welcome to **AI Drawing Studio**—your partner for transforming rough ideas into expressive artwork that stands out on any screen or print.
 
+Jamil Hussain
+
 ## {{ "What We Do " | upcase }} 
 - Craft bespoke illustrations that capture your brand voice and personality
 - Use AI-assisted workflows to iterate faster without sacrificing detail
