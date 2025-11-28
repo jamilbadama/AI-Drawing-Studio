@@ -1,0 +1,17 @@
+name,student_id,email,grade,major,enrollment_date,gpa
+John Smith,STU001,john.smith@university.edu,A,Computer Science,2023-09-01,3.8
+Emily Johnson,STU002,emily.johnson@university.edu,B,Mathematics,2023-09-01,3.6
+Michael Brown,STU003,michael.brown@university.edu,A,Physics,2022-09-01,3.9
+Sarah Davis,STU004,sarah.davis@university.edu,B,Chemistry,2023-09-01,3.7
+David Wilson,STU005,david.wilson@university.edu,A,Engineering,2022-09-01,3.85
+Jessica Martinez,STU006,jessica.martinez@university.edu,B,Biology,2023-09-01,3.65
+Christopher Lee,STU007,christopher.lee@university.edu,A,Computer Science,2022-09-01,3.92
+Amanda Taylor,STU008,amanda.taylor@university.edu,B,Psychology,2023-09-01,3.55
+James Anderson,STU009,james.anderson@university.edu,A,Mathematics,2022-09-01,3.88
+Lisa Garcia,STU010,lisa.garcia@university.edu,B,English,2023-09-01,3.6
+Robert Thomas,STU011,robert.thomas@university.edu,A,Engineering,2022-09-01,3.75
+Jennifer White,STU012,jennifer.white@university.edu,B,History,2023-09-01,3.68
+Daniel Harris,STU013,daniel.harris@university.edu,A,Computer Science,2022-09-01,3.91
+Michelle Clark,STU014,michelle.clark@university.edu,B,Art,2023-09-01,3.62
+Matthew Lewis,STU015,matthew.lewis@university.edu,A,Physics,2022-09-01,3.87
+

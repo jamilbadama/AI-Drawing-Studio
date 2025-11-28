@@ -1,0 +1,124 @@
+---
+layout: base
+---
+
+<section class="py-5 text-center container">
+  <div class="row py-lg-5">
+    <div class="col-lg-6 col-md-8 mx-auto">
+      {%- if page.hero_title -%}
+        <h1 class="fw-light">{{ page.hero_title }}</h1>
+      {%- elsif page.title -%}
+        <h1 class="fw-light">{{ page.title }}</h1>
+      {%- else -%}
+        <h1 class="fw-light">{{ site.title | escape }}</h1>
+      {%- endif -%}
+      {%- if page.hero_subtitle -%}
+        <p class="lead text-body-secondary">{{ page.hero_subtitle }}</p>
+      {%- else -%}
+        <p class="lead text-body-secondary">{{ site.description | escape }}</p>
+      {%- endif -%}
+      {%- if page.cta_label and page.cta_url -%}
+        <p>
+          <a href="{{ page.cta_url | relative_url }}" class="btn btn-primary my-2">{{ page.cta_label }}</a>
+          <a href="{{ '/about/' | relative_url }}" class="btn btn-secondary my-2">Learn More</a>
+        </p>
+      {%- endif -%}
+    </div>
+  </div>
+</section>
+
+{%- if content != "" -%}
+<div class="container mb-5">
+  <div class="row">
+    <div class="col-lg-8 mx-auto">
+      {{ content }}
+    </div>
+  </div>
+</div>
+{%- endif -%}
+
+<div class="album py-5 bg-body-tertiary">
+  <div class="container">
+    {% if site.paginate %}
+      {% assign posts = paginator.posts %}
+    {% else %}
+      {% assign posts = site.posts %}
+    {% endif %}
+
+    {%- if posts.size > 0 -%}
+      {%- if page.list_title -%}
+        <h2 class="text-center mb-5">{{ page.list_title }}</h2>
+      {%- endif -%}
+      
+      <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+        {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
+        {%- for post in posts -%}
+        <div class="col">
+          <div class="card shadow-sm">
+            {%- if post.image -%}
+            <img src="{{ post.image | relative_url }}" class="card-img-top" alt="{{ post.title | escape }}" style="object-fit: cover; height: 225px;">
+            {%- else -%}
+            <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
+              <title>Placeholder</title>
+              <rect width="100%" height="100%" fill="#55595c"></rect>
+              <text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text>
+            </svg>
+            {%- endif -%}
+            <div class="card-body">
+              <h5 class="card-title">{{ post.title | escape }}</h5>
+              <p class="card-text">
+                {%- if post.excerpt -%}
+                  {{ post.excerpt | strip_html | truncatewords: 30 }}
+                {%- else -%}
+                  {{ post.content | strip_html | truncatewords: 30 }}
+                {%- endif -%}
+              </p>
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                  <a href="{{ post.url | relative_url }}" class="btn btn-sm btn-outline-secondary">View</a>
+                  {%- if post.categories -%}
+                    <button type="button" class="btn btn-sm btn-outline-secondary" disabled>{{ post.categories | first }}</button>
+                  {%- endif -%}
+                </div>
+                <small class="text-body-secondary">{{ post.date | date: date_format }}</small>
+              </div>
+            </div>
+          </div>
+        </div>
+        {%- endfor -%}
+      </div>
+
+      {% if site.paginate %}
+        <nav aria-label="Page navigation" class="mt-5">
+          <ul class="pagination justify-content-center">
+            {%- if paginator.previous_page -%}
+            <li class="page-item">
+              <a class="page-link" href="{{ paginator.previous_page_path | relative_url }}">Previous</a>
+            </li>
+            {%- else -%}
+            <li class="page-item disabled">
+              <span class="page-link">Previous</span>
+            </li>
+            {%- endif -%}
+            <li class="page-item active">
+              <span class="page-link">{{ paginator.page }}</span>
+            </li>
+            {%- if paginator.next_page -%}
+            <li class="page-item">
+              <a class="page-link" href="{{ paginator.next_page_path | relative_url }}">Next</a>
+            </li>
+            {%- else -%}
+            <li class="page-item disabled">
+              <span class="page-link">Next</span>
+            </li>
+            {%- endif -%}
+          </ul>
+        </nav>
+      {%- endif %}
+    {%- else -%}
+      <div class="text-center">
+        <p class="lead">No posts yet. Check back soon!</p>
+      </div>
+    {%- endif -%}
+  </div>
+</div>

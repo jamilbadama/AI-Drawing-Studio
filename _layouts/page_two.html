@@ -1,0 +1,19 @@
+---
+layout: base
+---
+<aside style="float: left; width: 20%;">
+  <h1> {{ site.time | date: "%Y-%m-%d %H:%M:%S" }}</h1>
+</aside>
+<article class="post" style="float: left; width: 80%;">
+
+
+  <header class="post-header">
+   
+    <h3 class="post-title">{{ page.title | escape }}</h3>
+  </header>
+
+  <div class="post-content">
+    {{ content }}
+  </div>
+
+</article>

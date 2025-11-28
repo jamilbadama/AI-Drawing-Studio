@@ -1,0 +1,118 @@
+---
+# Only the main Sass file needs front matter (the dashes are enough)
+---
+
+// Custom styles for Bootstrap Album template
+// Bootstrap 5.3 is loaded via CDN in head.html
+
+// Override or extend Bootstrap styles as needed
+.bd-placeholder-img {
+  font-size: 1.125rem;
+  text-anchor: middle;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
+}
+
+.bd-placeholder-img-lg {
+  font-size: 3.5rem;
+}
+
+// Post content styling
+.post-content {
+  img {
+    max-width: 100%;
+    height: auto;
+    margin: 1rem 0;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+  }
+  
+  p {
+    margin-bottom: 1rem;
+  }
+  
+  code {
+    background-color: var(--bs-secondary-bg);
+    padding: 0.125rem 0.25rem;
+    border-radius: 0.25rem;
+    font-size: 0.875em;
+  }
+  
+  pre {
+    background-color: var(--bs-secondary-bg);
+    padding: 1rem;
+    border-radius: 0.5rem;
+    overflow-x: auto;
+    margin-bottom: 1rem;
+    
+    code {
+      background-color: transparent;
+      padding: 0;
+    }
+  }
+  
+  blockquote {
+    border-left: 4px solid var(--bs-border-color);
+    padding-left: 1rem;
+    margin-left: 0;
+    color: var(--bs-secondary-color);
+  }
+  
+  ul, ol {
+    margin-bottom: 1rem;
+    padding-left: 2rem;
+  }
+  
+  a {
+    color: var(--bs-link-color);
+    text-decoration: underline;
+    
+    &:hover {
+      color: var(--bs-link-hover-color);
+    }
+  }
+}
+
+// Page content styling
+.page-content {
+  @extend .post-content;
+}
+
+// Ensure cards are responsive
+.card {
+  transition: transform 0.2s ease-in-out;
+  
+  &:hover {
+    transform: translateY(-2px);
+  }
+}
+
+// Custom navbar styling
+.navbar-brand {
+  font-weight: 600;
+}
+
+// Footer styling
+footer {
+  a {
+    color: var(--bs-body-color);
+    text-decoration: none;
+    
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
+
+// Back to top link
+.float-end a {
+  text-decoration: none;
+  
+  &:hover {
+    text-decoration: underline;
+  }
+}

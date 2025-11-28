@@ -1,0 +1,57 @@
+<header data-bs-theme="dark">
+  <div class="collapse text-bg-dark" id="navbarHeader">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-8 col-md-7 py-4">
+          <h4>About</h4>
+          <p class="text-body-secondary">{{ site.description | escape }}</p>
+          {%- if site.header_pages -%}
+          <h5 class="mt-3">Pages</h5>
+          <ul class="list-unstyled">
+            {%- for page_path in site.header_pages -%}
+              {%- assign nav_page = site.pages | where: "path", page_path | first -%}
+              {%- if nav_page.title -%}
+              <li><a href="{{ nav_page.url | relative_url }}" class="text-white">{{ nav_page.title | escape }}</a></li>
+              {%- endif -%}
+            {%- endfor -%}
+          </ul>
+          {%- endif -%}
+        </div>
+        <div class="col-sm-4 offset-md-1 py-4">
+          <h4>Contact</h4>
+          <ul class="list-unstyled">
+            {%- if site.email -%}
+            <li><a href="mailto:{{ site.email }}" class="text-white">{{ site.email }}</a></li>
+            {%- endif -%}
+            {%- if site.twitter_username -%}
+            <li><a href="https://twitter.com/{{ site.twitter_username }}" class="text-white">Follow on X</a></li>
+            {%- endif -%}
+            {%- if site.github_username -%}
+            <li><a href="https://github.com/{{ site.github_username }}" class="text-white">Like on GitHub</a></li>
+            {%- endif -%}
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  <nav class="navbar navbar-dark bg-dark shadow-sm">
+    <div class="container">
+      <a href="{{ '/' | relative_url }}" class="navbar-brand d-flex align-items-center">
+        <strong>{{ site.title | escape }}</strong>
+      </a>
+      {%- if site.header_pages -%}
+      <div class="navbar-nav d-none d-md-flex flex-row">
+        {%- for page_path in site.header_pages -%}
+          {%- assign nav_page = site.pages | where: "path", page_path | first -%}
+          {%- if nav_page.title -%}
+          <a class="nav-link px-3" href="{{ nav_page.url | relative_url }}">{{ nav_page.title | escape }}</a>
+          {%- endif -%}
+        {%- endfor -%}
+      </div>
+      {%- endif -%}
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarHeader" aria-controls="navbarHeader" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+    </div>
+  </nav>
+</header>

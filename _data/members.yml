@@ -1,0 +1,60 @@
+- name: Jamil
+  position: Developer
+  bio: Jamil has worked on Jekyll for the past *five years*.
+  email: jamil@example.com
+  active: true
+  age: 29
+  rate: 55.5
+  skills:
+    - Ruby
+    - Jekyll
+    - Liquid
+    - HTML
+    - CSS
+  links:
+    github: https://github.com/jamil
+    website: https://jamil.dev
+  address:
+    city: Lahore
+    country: Pakistan
+  joined_on: 2022-05-01
+  availability_hours_per_week: 20
+  preferences:
+    newsletter: true
+    theme: dark
+  awards: null
+  projects:
+    - name: site-optimizer
+      stars: 120
+    - name: theme-minima-fork
+      stars: 45
+
+- name: Ali
+  position: Developer
+  bio: Ali enjoys building fast static sites with Jekyll.
+  email: ali@example.com
+  active: false
+  age: 31
+  rate: 60.0
+  skills:
+    - JavaScript
+    - Eleventy
+    - Jekyll
+  links:
+    github: https://github.com/ali
+    website: https://ali.dev
+  address:
+    city: Karachi
+    country: Pakistan
+  joined_on: 2021-11-15
+  availability_hours_per_week: 10
+  preferences:
+    newsletter: false
+    theme: light
+  awards: ~
+  projects:
+    - name: docs-theme
+      stars: 230
+    - name: sitemap-generator
+      stars: 80
+
